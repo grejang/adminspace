@@ -38,7 +38,7 @@
   
 	<script>
 		const isMobile = window.innerWidth <= 768;
-		document.head.insertAdjacentHTML('beforeend', `<style> ${isMobile ? ` .text { width: 360px; top: 70px; } #logo { width: 350px; } ` : `.text {  } `}</style>`);
+		document.head.insertAdjacentHTML('beforeend', `<style> ${isMobile ? ` .text { width: 360px; } #logo { width: 290px; } ` : `.text {  } `}</style>`);
 	</script>
     
     <audio id="music" src="soundtracks/sixteen_pointed_asterisk.ogg" autoplay loop></audio>
@@ -59,7 +59,7 @@
 	<div id="overlay">
 		<div id="logintext">
 			<p>Per accedere a questa pagina è necessario un AdminCode</p>
-			<button class="btn" onclick="redirect()">Logout</button>
+			<button class="btn" onclick="redirect()">Accedi</button>
 		</div>
 	</div>
 	<div id="admin-desc">
