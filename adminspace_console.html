@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-	<base href="../">
     <meta charset="UTF-8">
-    <title>AdminSPACE - Console Terminal</title>
+    <title>ADMINSPACE Terminal</title>
     <link rel="icon" href="favicon.ico">
 	<link href="style.css" rel="stylesheet" type="text/css" media="all">
-	<!-- Placeholder-->
+	<!-- -->
     <style>
         body {
-			background-image: url("backgrounds/sky4_sphere.png"); 
+			background-image: url("backgrounds/adminspace.png"); 
             margin: 0;
             padding: 0;
-            font-family: "VoidFont", monospace;
+            font-family: "VoidFont", monospace; 
             color: white;
+			image-rendering: pixelated;
         }
         
         .container {
@@ -50,6 +50,17 @@
 			font-size: 14px;
 			width: 256px;
         }
+        
+        .warning {
+            font-size: 18px;
+            color: #c20000;
+            background-color: #ffffff;
+        } 
+        .admin-id {
+            font-size: 18px;
+            color: green;
+            background-color: #ffffff;
+        } 
 
         .send-btn {
 			font-family: 'VoidFont', monospace;
@@ -67,9 +78,15 @@
             margin-bottom: 10px;
         }
         
+        .gui-img {
+            margin-top: 10px;
+            width: 500px;
+            height: 500px;
+        }
+        
         .log-area {
             margin-top: 10px;
-            width: 300px;
+            width: 340px;
             max-height: 200px;
             overflow-y: auto;
             background: rgba(0,0,0,0.5);
@@ -83,12 +100,23 @@
         .log-area p {
             margin: 5px 0;
         }
+		
+		.area-img {
+			width: 400px;
+			position: absolute;
+			top: 20%;
+			right: 35%;
+		}
+		
+		#admin {
+			
+		}
     </style>
 
 </head>
 <body>
 
-<audio id="music" src="soundtracks/voidexp.ogg" autoplay loop></audio>
+<audio id="music" src="soundtracks/inverse_tesseract.ogg" autoplay loop></audio>
 	<script>
 		document.addEventListener('click', function() {
 		const music = document.getElementById('music');
@@ -101,10 +129,11 @@
 	</script>
 
 <div class="container">
-
+	<p id="admin"></p>
+    <img class="area-img" src="images/console/adminspacegui.png" alt="ConsoleGUI">
     <div class="input-area">
-       <img src="images/console/console.png" class="center-img" alt="Terminal">
-       <input type="text" id="userInput" class="text-box" placeholder="Type RAW command">
+       <!-- src="images/console/adminspaceconsole.png" class="center-img" alt="AdminspaceTerminal"-->
+       <input type="text" id="userInput" class="text-box" placeholder="e ADMINSPACE Command">
        <button class="send-btn" onclick="sendText()">Execute</button>
        <p>Output dei comandi:</p>
        <div class="log-area" id="logArea"></div>
@@ -112,9 +141,9 @@
 </div>
 
 
-<script src="scripts/console/consolerisposte.js"></script>
+<script src="scripts/console/adminconsolerispostev2.js"></script>
 
-<script src="scripts/console/consolemain.js"></script>
+<script src="scripts/console/adminconsolemain.js"></script>
 
 </body>
 </html>
