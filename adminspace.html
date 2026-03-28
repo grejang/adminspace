@@ -25,6 +25,10 @@
         width: 700px;
         margin-bottom: 10px;
       }
+	  
+	  #logo {
+		width: 670px;
+	  }
       
     </style>
   </head>
@@ -34,7 +38,7 @@
   
 	<script>
 		const isMobile = window.innerWidth <= 768;
-		document.head.insertAdjacentHTML('beforeend', `<style> ${isMobile ? ` .text { width: 360px}` : `.text {  } `}</style>`);
+		document.head.insertAdjacentHTML('beforeend', `<style> ${isMobile ? ` .text { width: 360px top: 70px; } #logo { width: 350px; } ` : `.text {  } `}</style>`);
 	</script>
     
     <audio id="music" src="soundtracks/sixteen_pointed_asterisk.ogg" autoplay loop></audio>
