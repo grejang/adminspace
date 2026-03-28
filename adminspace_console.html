@@ -20,7 +20,7 @@
         .container {
             position: absolute;
 			top: 50%;
-			right: 45%;
+			right: 50%;
         }
 
         .background-img {
@@ -104,8 +104,8 @@
 		.area-img {
 			width: 400px;
 			position: absolute;
-			top: -300%;
-			right: -60%;
+			top: -200px;
+			left: -200px;
 		}
 		
 		#admin {
@@ -128,6 +128,7 @@
 		document.head.insertAdjacentHTML('beforeend', `<style> ${isMobile ? ` .log-area { width: 330px; } ` : `.text {  } `}</style>`);
 	</script>
 
+<a href="index.html">Torna alla Home</a>
 <div class="container">
 	<p id="admin"></p>
     <img class="area-img" src="images/console/adminspacegui.png" alt="ConsoleGUI">
@@ -142,8 +143,6 @@
 
 
 <script src="scripts/console/adminconsolerispostev2.js"></script>
-
-<script src="scripts/console/adminconsolemain.js"></script>
 
 <!-- BASI DI ADMINSPACE -->
 	<div id="overlay">
@@ -162,5 +161,6 @@
 	</div>
 	
 	<script src="scripts/main.js"></script>
+	<script src="scripts/console/adminconsolemain.js"></script>
 </body>
 </html>

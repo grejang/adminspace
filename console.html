@@ -82,6 +82,12 @@
         .log-area p {
             margin: 5px 0;
         }
+		
+		#link {
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
     </style>
 
 </head>
@@ -98,9 +104,8 @@
 		const isMobile = window.innerWidth <= 768;
 		document.head.insertAdjacentHTML('beforeend', `<style> ${isMobile ? ` .log-area { width: 330px; } ` : `.text {  } `}</style>`);
 	</script>
-
+	<a id="link" href="index.html">Torna alla Home</a>
 <div class="container">
-
     <div class="input-area">
        <img src="images/console/console.png" class="center-img" alt="Terminal">
        <input type="text" id="userInput" class="text-box" placeholder="Type RAW command">

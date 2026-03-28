@@ -23,7 +23,6 @@ window.addEventListener("DOMContentLoaded", () => {
     addToLog("***ADMINSPACE Console V2.0.84***");
 });
 
-const params = new URLSearchParams(window.location.search);
 const id = params.get("admin");
 
 console.log("ID ricevuto:", id);
