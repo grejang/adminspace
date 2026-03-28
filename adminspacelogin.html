@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdminSPACE - Login</title>
+    <!--placeholder-->
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="icon" href="favicon.ico">
+    <style>
+      body {
+        background-image: url("backgrounds/adminspace_door.png"); 
+        background-size: cover;
+        background-position: center; 
+        background-attachment: fixed; 
+        color: white;
+        font-family: "VoidFont", monospace;
+      }
+      .text {
+        background: rgba(20,20,20,0.8);
+        border: 2px solid #d60000;
+        border-radius: 6px;
+        padding: 5px 10px;
+        width: 700px;
+        margin-bottom: 10px;
+      }
+	  
+	.btn {
+		background: #d60000;
+		color: #fff;
+		border: none;
+		padding: 10px 24px;
+		border-radius: 2px;
+		font-family: 'VoidFont', monospace;
+		font-size: 14px;
+		cursor: pointer;
+		transition: background 0.2s;
+		width: 256px;
+	}
+
+	.btn:hover {
+		background: #d43737;
+	}
+	
+	input[type="text"] {
+		background: #1a1a1a;
+		border: 1px solid #d60000f;
+		color: #fff;
+		padding: 10px 16px;
+		border-radius: 6px;
+		font-family: 'Minecraft', monospace;
+		font-size: 14px;
+		outline: none;
+		width: 256px;
+	}
+
+	input[type="text"]:focus {
+		border-color: #ff0000;
+	}
+
+	::placeholder {
+		color: rgba(255,255,255,0.3);
+    }
+	
+	.btn {
+		background: #d60000;
+		color: #fff;
+		border: none;
+		padding: 10px 24px;
+		border-radius: 2px;
+		font-family: 'VoidFont', monospace;
+		font-size: 14px;
+		cursor: pointer;
+		transition: background 0.2s;
+		width: 100px;
+	}
+
+	.btn:hover {
+		background: #d43737;
+	}
+	
+	#timer {
+		background: rgba(20,20,20,0.8);
+        border: 2px solid #ff3d38;
+        border-radius: 2px;
+        padding: 5px 10px;
+		display: none;
+		width: 256px;
+	}
+    </style>
+  </head>
+  <body>
+  
+  <div class="text">
+    
+    <audio id="music" src="soundtracks/sixteen_pointed_asterisk.ogg" autoplay loop></audio>
+	<script>
+		document.addEventListener('click', function() {
+		const music = document.getElementById('music');
+		if (music.paused) music.play();
+		}, { once: false });
+	</script>
+	
+	<script>
+      const isMobile = window.innerWidth <= 768;
+      document.head.insertAdjacentHTML('beforeend', `<style>
+        ${isMobile ? ` .text { width: 360px} #timer { width: 256px}` : `.text {  } `}</style>`);
+    </script>
+     
+    <img id="logo" src="images/adminspacelogo.png" alt="Adminspace Logo Full">
+	
+	<h1>AdminCode Login</h1>
+	
+	<p id="linking"></p>
+	
+	<input type="text" id="input" placeholder=">>>AdminCode<<<">
+	
+	<button class="btn" onclick="login()">Login</button>
+	
+	<div id="result"></div>
+	
+	<p id="timer"></p>
+	
+	<script src="scripts/login.js"></script>
+
+    <p>- Il team di Grejang</p>
+    
+    <p> - Adam</p>
+  </div>
+  </body>
+</html>
