@@ -26,6 +26,10 @@
         margin-bottom: 10px;
       }
 	  
+	  #logo {
+		width: 670px;
+	  }
+	  
 	.btn {
 		background: #d60000;
 		color: #fff;
@@ -105,7 +109,7 @@
 	<script>
       const isMobile = window.innerWidth <= 768;
       document.head.insertAdjacentHTML('beforeend', `<style>
-        ${isMobile ? ` .text { width: 360px; } #timer { width: 256px; }` : `.text {  } `}</style>`);
+        ${isMobile ? ` .text { width: 360px; } #timer { width: 256px; } #logo { width: 350px; }` : `.text {  } `}</style>`);
     </script>
      
     <img id="logo" src="images/adminspacelogo.png" alt="Adminspace Logo Full">
