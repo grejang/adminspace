@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
+	<base href="../">
     <meta charset="UTF-8">
     <title>ADMINSPACE Terminal</title>
     <link rel="icon" href="favicon.ico">
 	<link href="style.css" rel="stylesheet" type="text/css" media="all">
-	<script defer src="https://cloud.umami.is/script.js" data-website-id="1cf43030-5306-452c-92d3-85a630458f95"></script>
+	<!-- -->
     <style>
         body {
+			background-image: url("backgrounds/adminspacegui.png"); 
             margin: 0;
             padding: 0;
             font-family: "VoidFont", monospace; 
             color: white;
+			image-rendering: pixelated;
         }
         
         .container {
@@ -39,10 +42,14 @@
         }
 
         .text-box {
-            font-size: 18px;
-            padding: 5px 10px;
-            width: 400px;
-            color: #6a6a6a;
+            background: rgba(0,0,0,0.75);
+			border: 1px solid #d60000f;
+			color: #fff;
+			padding: 10px 16px;
+			border-radius: 6px;
+			font-family: 'VoidFont', monospace;
+			font-size: 14px;
+			width: 256px;
         }
         
         .warning {
@@ -57,6 +64,7 @@
         } 
 
         .send-btn {
+			font-family: 'VoidFont', monospace;
             font-size: 18px;
             padding: 5px 10px;
             cursor: pointer;
@@ -98,12 +106,6 @@
 </head>
 <body>
 
-<div class="warning">
-   <p>WARNING: If you are using this terminal without an admin code close this page immediatedly</p>
-</div>
-<div class="admin-id">
-   <p id=admin></p>
-</div>
 <audio id="music" src="soundtracks/voidexp.ogg" autoplay loop></audio>
 	<script>
 		document.addEventListener('click', function() {
