@@ -9,18 +9,18 @@
     <style>
         body {
 			background-image: url("backgrounds/adminspace.png"); 
-            margin: 0;
-            padding: 0;
-            font-family: "VoidFont", monospace; 
-            color: white;
+			background-size: cover;
+			background-position: center; 
+			background-attachment: fixed; 
+			color: white;
+			font-family: "VoidFont", monospace;
 			image-rendering: pixelated;
         }
         
         .container {
-            position: relative;
-            width: 100vw;
-            height: 100vh;
-            overflow: hidden;
+            position: absolute;
+			top: 50%;
+			right: 45%;
         }
 
         .background-img {
@@ -104,8 +104,8 @@
 		.area-img {
 			width: 400px;
 			position: absolute;
-			top: 20%;
-			right: 35%;
+			top: -300%;
+			right: -60%;
 		}
 		
 		#admin {
