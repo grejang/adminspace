@@ -69,7 +69,7 @@
         
         .log-area {
             margin-top: 10px;
-            width: 500px;
+            width: 300px;
             max-height: 200px;
             overflow-y: auto;
             background: rgba(0,0,0,0.5);
@@ -95,11 +95,15 @@
 		if (music.paused) music.play();
 		}, { once: false });
 	</script>
+	<script>
+		const isMobile = window.innerWidth <= 768;
+		document.head.insertAdjacentHTML('beforeend', `<style> ${isMobile ? ` .log-area { width: 330px; } ` : `.text {  } `}</style>`);
+	</script>
 
 <div class="container">
 
     <div class="input-area">
-       <img src="images/console.png" class="center-img" alt="Terminal">
+       <img src="images/console/console.png" class="center-img" alt="Terminal">
        <input type="text" id="userInput" class="text-box" placeholder="Type RAW command">
        <button class="send-btn" onclick="sendText()">Execute</button>
        <p>Output dei comandi:</p>
@@ -108,9 +112,9 @@
 </div>
 
 
-<script src="scripts/consolerisposte.js"></script>
+<script src="scripts/console/consolerisposte.js"></script>
 
-<script src="scripts/consolemain.js"></script>
+<script src="scripts/console/consolemain.js"></script>
 
 </body>
 </html>

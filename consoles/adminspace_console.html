@@ -9,7 +9,7 @@
 	<!-- -->
     <style>
         body {
-			background-image: url("backgrounds/adminspacegui.png"); 
+			background-image: url("backgrounds/adminspace.png"); 
             margin: 0;
             padding: 0;
             font-family: "VoidFont", monospace; 
@@ -87,7 +87,7 @@
         
         .log-area {
             margin-top: 10px;
-            width: 500px;
+            width: 340px;
             max-height: 200px;
             overflow-y: auto;
             background: rgba(0,0,0,0.5);
@@ -101,23 +101,39 @@
         .log-area p {
             margin: 5px 0;
         }
+		
+		.area-img {
+			width: 400px;
+			position: absolute;
+			top: 20%;
+			right: 35%;
+		}
+		
+		#admin {
+			
+		}
     </style>
 
 </head>
 <body>
 
-<audio id="music" src="soundtracks/voidexp.ogg" autoplay loop></audio>
+<audio id="music" src="soundtracks/inverse_tesseract.ogg" autoplay loop></audio>
 	<script>
 		document.addEventListener('click', function() {
 		const music = document.getElementById('music');
 		if (music.paused) music.play();
 		}, { once: false });
 	</script>
+	<script>
+		const isMobile = window.innerWidth <= 768;
+		document.head.insertAdjacentHTML('beforeend', `<style> ${isMobile ? ` .log-area { width: 330px; } ` : `.text {  } `}</style>`);
+	</script>
 
 <div class="container">
-    <img class="background-img" src="images/adminspacegui.png" alt="TheInfiniteVoid">
+	<p id="admin"></p>
+    <img class="area-img" src="images/console/adminspacegui.png" alt="ConsoleGUI">
     <div class="input-area">
-       <img src="images/adminspaceconsole.png" class="center-img" alt="AdminspaceTerminal">
+       <!-- src="images/console/adminspaceconsole.png" class="center-img" alt="AdminspaceTerminal"-->
        <input type="text" id="userInput" class="text-box" placeholder="e ADMINSPACE Command">
        <button class="send-btn" onclick="sendText()">Execute</button>
        <p>Output dei comandi:</p>
@@ -126,9 +142,9 @@
 </div>
 
 
-<script src="scripts/adminconsolerispostev2.js"></script>
+<script src="scripts/console/adminconsolerispostev2.js"></script>
 
-<script src="scripts/adminconsolemain.js"></script>
+<script src="scripts/console/adminconsolemain.js"></script>
 
 </body>
 </html>
