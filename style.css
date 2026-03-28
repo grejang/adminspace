@@ -126,20 +126,20 @@ body {
 
 
 a {
-  color: #6100ff;
+  color: #ff0909;
 }
 
 
 a:visited {
-  color: #00ff35;
+  color: #ff0909;
 }
 
 
 a:hover {
-  color: #7800ff;
+  color: #ff5e5e;
 }
 
 
 a:active {
-  color: #ff0000;
+  color: #ff4700;
 }

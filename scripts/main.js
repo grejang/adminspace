@@ -33,5 +33,12 @@ document.addEventListener("click", (e) => {
     }
 });
 
-let text = "Accesso eseguito da: ";
-document.getElementById("admin-name").textContent = text + admin;
+let admintext = "Accesso eseguito da: ";
+document.getElementById("admin-name").textContent = admintext + admin;
+
+if (admin) {
+  document.querySelectorAll('a.adminlink').forEach(function(link) {
+    const href = link.getAttribute('href');
+    link.href = href + '?admin=' + admin;
+  });
+}
