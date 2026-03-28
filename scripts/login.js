@@ -3,8 +3,8 @@ const redirect = params.get('redirect');
 
 
 const codici = {
-  'ADMINCODE1': 'u2447',  
-  'ADMINCODE2': 'u2726',  
+  '2674598713': 'u2447',  
+  '1756439802': 'u2726',  
   
 };
 

@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AdminSPACE</title>
+    <title>AdminSPACE - Home Page</title>
     <!--placeholder-->
     <link href="style.css" rel="stylesheet" type="text/css" media="all">
     <link rel="icon" href="favicon.ico">
@@ -25,38 +25,55 @@
         width: 700px;
         margin-bottom: 10px;
       }
+	  
+	  .admin {
+		position: absolute;
+		right: 5px;
+		top: 5px;
+	  }
+	  
+	  #admin-icon {
+		width: 64px;
+	  }
       
     </style>
   </head>
   <body>
   
   <div class="text">
+  
+	<script>
+		const isMobile = window.innerWidth <= 768;
+		document.head.insertAdjacentHTML('beforeend', `<style> ${isMobile ? ` .text { width: 360px}` : `.text {  } `}</style>`);
+	</script>
     
     <audio id="music" src="soundtracks/sixteen_pointed_asterisk.ogg" autoplay loop></audio>
-	<script>
-		document.addEventListener('click', function() {
-		const music = document.getElementById('music');
-		if (music.paused) music.play();
-		}, { once: false });
-	</script>
-	
-	<script>
-      const isMobile = window.innerWidth <= 768;
-      document.head.insertAdjacentHTML('beforeend', `<style>
-        ${isMobile ? ` .text { width: 360px}` : ``.text {  } `}</style>`);
-    </script>
      
     <img id="logo" src="images/adminspacelogo.png" alt="Adminspace Logo Full">
 	
-	<p>Benvenuti ad AdminSPACE</p>
+	<h1>AdminSPACE</h1>
 	
-	<p>Eseguite l'accesso con un 'ADMINCODE' per accedere a AdminSPACE</p>
-	
-	<button class="btn" onclick="location.href='adminspacelogin.html?redirect=adminspace'">Accedi</button>
+	<p>Su questo sito potete accedere a Consoles, WorkZones, Documenti e molto altro ancora</p>
 
     <p>- Il team di Grejang</p>
     
     <p> - Adam</p>
-  </div>
+	
+	</div>
+	
+	<!-- OVERLAY -->
+	<div id="overlay">
+		<div id="logintext">
+			<p>Per accedere a questa pagina è necessario un AdminCode</p>
+			<button class="btn" onclick="redirect()">Accedi</button>
+		</div>
+	</div>
+	
+	<div class="admin">
+		<img id="frame" src="images/admin_frame.png" alt="Admin Logo Frame">
+		<img id="admin-icon" src="admins/blank.png" alt="Admin Logo">
+	</div>
+	
+	<script src="scripts/main.js"></script>
   </body>
 </html>

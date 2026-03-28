@@ -6,15 +6,40 @@ body {
 }
 
 #overlay {
+  background: rgba(20,20,20,100);
+  border: 2px solid #d60000;
+  border-radius: 6px;
+  padding: 5px 10px;
   position: fixed;
   inset: 0;
-  background: #000;
   z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
+  display: none;
 }
+
+#logintext {
+	align-content: column;
+}
+
+.btn {
+		background: #d60000;
+		color: #fff;
+		border: none;
+		padding: 10px 24px;
+		border-radius: 2px;
+		font-family: 'VoidFont', monospace;
+		font-size: 14px;
+		cursor: pointer;
+		transition: background 0.2s;
+		width: 256px;
+	}
+
+	.btn:hover {
+		background: #d43737;
+	}
 
 @font-face {
   font-family: 'VoidFont';
