@@ -25,16 +25,6 @@
         width: 700px;
         margin-bottom: 10px;
       }
-	  
-	  .admin {
-		position: absolute;
-		right: 5px;
-		top: 5px;
-	  }
-	  
-	  #admin-icon {
-		width: 64px;
-	  }
       
     </style>
   </head>
@@ -65,10 +55,13 @@
 	<div id="overlay">
 		<div id="logintext">
 			<p>Per accedere a questa pagina è necessario un AdminCode</p>
-			<button class="btn" onclick="redirect()">Accedi</button>
+			<button class="btn" onclick="redirect()">Logout</button>
 		</div>
 	</div>
-	
+	<div id="admin-desc">
+		<p id="admin-name">Accesso eseguito da: </p>
+		<button class="logout" onclick="location.href='index.html'">Logout</button>
+	</div>
 	<div class="admin">
 		<img id="frame" src="images/admin_frame.png" alt="Admin Logo Frame">
 		<img id="admin-icon" src="admins/blank.png" alt="Admin Logo">

@@ -15,4 +15,23 @@ if (!admin) {
 function redirect() {
 	const pagina = window.location.pathname.split('/').pop().replace('.html', '');
 	location.href = 'adminspacelogin.html?redirect=' + pagina;
-}	
+}
+
+const adminButton = document.getElementById("admin-icon");
+const adminContainer = document.getElementById("admin-desc");
+
+
+adminButton.onclick = (e) => {
+    e.stopPropagation();
+    adminContainer.classList.toggle("active");
+};
+
+
+document.addEventListener("click", (e) => {
+    if (!adminContainer.contains(e.target) && e.target !== adminButton) {
+        adminContainer.classList.remove("active");
+    }
+});
+
+let text = "Accesso eseguito da: ";
+document.getElementById("admin-name").textContent = text + admin;

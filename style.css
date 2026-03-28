@@ -24,22 +24,77 @@ body {
 	align-content: column;
 }
 
-.btn {
-		background: #d60000;
-		color: #fff;
-		border: none;
-		padding: 10px 24px;
-		border-radius: 2px;
-		font-family: 'VoidFont', monospace;
-		font-size: 14px;
-		cursor: pointer;
-		transition: background 0.2s;
-		width: 256px;
-	}
+.admin {
+	position: absolute;
+	right: 5px;
+	top: 18px;
+	height: 70px;
+	width: 70px;
+	margin: 0 auto;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+	  
+#admin-icon {
+	position: absolute;
+	width: 64px;
+	cursor: pointer;
+}
+	  
+#frame {
+	width: 74px;
+}
 
-	.btn:hover {
-		background: #d43737;
-	}
+#admin-desc {
+	display: none;
+	background: rgba(20,20,20,0.8);
+    border: 2px solid #d60000;
+    border-radius: 6px;
+    padding: 5px 10px;
+	width: 256px;
+	height: 85px;
+}
+	  
+#admin-desc.active {
+	display: table-column;
+	position: absolute;
+	right: 78px;
+	top: 0px;
+}
+
+.btn {
+	background: #d60000;
+	color: #fff;
+	border: none;
+	padding: 10px 24px;
+	border-radius: 2px;
+	font-family: 'VoidFont', monospace;
+	font-size: 14px;
+	cursor: pointer;
+	transition: background 0.2s;
+	width: 256px;
+}
+
+.btn:hover {
+	background: #d43737;
+}
+
+.logout {
+	background: #d60000;
+	color: #fff;
+	border: none;
+	padding: 10px 24px;
+	border-radius: 2px;
+	font-family: 'VoidFont', monospace;
+	font-size: 14px;
+	cursor: pointer;
+	transition: background 0.2s;
+}
+
+.logout:hover {
+	background: #d43737;
+}
 
 @font-face {
   font-family: 'VoidFont';
