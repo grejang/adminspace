@@ -610,15 +610,16 @@
   isDragging = true;
   offsetX = t.clientX - rect.left;
   offsetY = t.clientY - rect.top;
-}, { passive: true });
+} );
 
 titlebar.addEventListener('touchmove', function(e) {
+	 e.preventDefault();
   if (!isDragging) return;
   const t = e.touches[0];
   dragMoved = true;
   book.style.left = (t.clientX - offsetX) + 'px';
   book.style.top  = (t.clientY - offsetY) + 'px';
-}, { passive: true });
+});
 
 titlebar.addEventListener('touchend', function() {
   if (!dragMoved) {
@@ -772,14 +773,15 @@ titlebar.addEventListener('touchend', function() {
   libDragging = true;
   libOffX = t.clientX - rect.left;
   libOffY = t.clientY - rect.top;
-}, { passive: true });
+});
 
 libTitlebar.addEventListener('touchmove', function(e) {
+	 e.preventDefault();
   if (!libDragging) return;
   const t = e.touches[0];
   library.style.left = (t.clientX - libOffX) + 'px';
   library.style.top  = (t.clientY - libOffY) + 'px';
-}, { passive: true });
+});
 
 libTitlebar.addEventListener('touchend', function() {
   libDragging = false;
