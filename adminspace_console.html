@@ -213,6 +213,7 @@
 
 
 <script src="scripts/console/adminconsolerispostev2.js"></script>
+<script src="scripts/console/adminconsolemain.js"></script>
 
 <!-- BASI DI ADMINSPACE -->
 	<div id="overlay">
@@ -221,8 +222,11 @@
 			<button class="btn" onclick="redirect()">Accedi</button>
 		</div>
 	</div>
+	<div id="book"></div>
+	<script src="scripts/book.js"></script>
 	<div id="admin-desc">
 		<p id="admin-name">Accesso eseguito da: </p>
+		<button onclick="apriLibreria()" class="library"><img src="images/book.png" class="mini-book">Libreria</button>
 		<button class="logout" onclick="location.href='index.html'">Logout</button>
 	</div>
 	<div class="admin">
@@ -231,6 +235,6 @@
 	</div>
 	
 	<script src="scripts/main.js"></script>
-	<script src="scripts/console/adminconsolemain.js"></script>
+<!-- FINE DELLE BASI DI ADMINSPACE-->
 </body>
 </html>

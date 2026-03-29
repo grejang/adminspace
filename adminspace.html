@@ -47,6 +47,19 @@
 	.adminlink:hover::after {
 		opacity: 1;
 	}
+	
+	.red {
+		color: #ff0626;
+	}
+	.green {
+		color: #07ff06;
+	}
+	.blue {
+		color: #0622ff;
+	}
+	.orange {
+		color: #ff9206;
+	}
       
     </style>
   </head>
@@ -66,6 +79,8 @@
 	<h1>AdminSPACE</h1>
 	
 	<p>Su questo sito potete accedere a Consoles, WorkZones, Documenti e molto altro ancora</p>
+	
+	<p><b class="red">ATTENZIONE: </b>Alcune feature di AdminSPACE funzionano meglio su dispositivi Desktop</p>
 	
 	<p>---Consoles Disponibili---</p>
 	<a class="adminlink" href="console.html">
@@ -94,8 +109,11 @@
 			<button class="btn" onclick="redirect()">Accedi</button>
 		</div>
 	</div>
+	<div id="book"></div>
+	<script src="scripts/book.js"></script>
 	<div id="admin-desc">
 		<p id="admin-name">Accesso eseguito da: </p>
+		<button onclick="apriLibreria()" class="library"><img src="images/book.png" class="mini-book">Libreria</button>
 		<button class="logout" onclick="location.href='index.html'">Logout</button>
 	</div>
 	<div class="admin">
@@ -104,5 +122,6 @@
 	</div>
 	
 	<script src="scripts/main.js"></script>
+<!-- FINE DELLE BASI DI ADMINSPACE-->
   </body>
 </html>
