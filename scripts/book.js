@@ -221,6 +221,7 @@
     #book-done:active { background: #aaaaaa; }
 
     #book-titlebar {
+	  touch-action: none;
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 32px;
@@ -248,6 +249,7 @@
     #book-library.open { display: flex; }
 
     #book-library-titlebar {
+		touch-action: none;
       display: flex;
       justify-content: space-between;
       align-items: center;
