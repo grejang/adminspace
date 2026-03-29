@@ -597,6 +597,34 @@
     isDragging = false;
     titlebar.classList.remove('grabbing');
   });
+  
+  titlebar.addEventListener('touchstart', function(e) {
+  const t = e.touches[0];
+  dragMoved = false;
+  const rect = book.getBoundingClientRect();
+  book.style.transform = 'none';
+  book.style.left = rect.left + 'px';
+  book.style.top  = rect.top  + 'px';
+  isDragging = true;
+  offsetX = t.clientX - rect.left;
+  offsetY = t.clientY - rect.top;
+}, { passive: true });
+
+titlebar.addEventListener('touchmove', function(e) {
+  if (!isDragging) return;
+  const t = e.touches[0];
+  dragMoved = true;
+  book.style.left = (t.clientX - offsetX) + 'px';
+  book.style.top  = (t.clientY - offsetY) + 'px';
+}, { passive: true });
+
+titlebar.addEventListener('touchend', function() {
+  if (!dragMoved) {
+    if (pagesOpen) chiudiTutto();
+    else if (isOpen) chiudiTutto();
+  }
+  isDragging = false;
+});
 
   // ─── LIBRERIA ─────────────────────────────────────────────────────────────
 
@@ -732,8 +760,31 @@
     libDragging = false;
     libTitlebar.classList.remove('grabbing');
   });
+  
+  libTitlebar.addEventListener('touchstart', function(e) {
+  const t = e.touches[0];
+  const rect = library.getBoundingClientRect();
+  library.style.transform = 'none';
+  library.style.left = rect.left + 'px';
+  library.style.top  = rect.top  + 'px';
+  libDragging = true;
+  libOffX = t.clientX - rect.left;
+  libOffY = t.clientY - rect.top;
+}, { passive: true });
+
+libTitlebar.addEventListener('touchmove', function(e) {
+  if (!libDragging) return;
+  const t = e.touches[0];
+  library.style.left = (t.clientX - libOffX) + 'px';
+  library.style.top  = (t.clientY - libOffY) + 'px';
+}, { passive: true });
+
+libTitlebar.addEventListener('touchend', function() {
+  libDragging = false;
+});
 
   // ─── ESPONI apriLibreria GLOBALMENTE ──────────────────────────────────────
   window.apriLibreria = apriLibreria;
+  
 
 })();
