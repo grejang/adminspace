@@ -5,7 +5,7 @@ const redirect = params.get('redirect');
 const codici = {
   '2674598713': 'u2447',  
   '1756439802': 'u2726',  
-  
+  '2103173093': 'u2660',
 };
 
 

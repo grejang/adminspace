@@ -21,11 +21,19 @@ function sendText() {
 // Messaggio iniziale appena la pagina è pronta
 window.addEventListener("DOMContentLoaded", () => {
     addToLog("***ADMINSPACE Console V2.0.84***");
+	document.getElementById('title2').style.display = 'none';
+	document.getElementById('ver').style.display = 'none';
 });
 
-const id = params.get("admin");
+function yes() {
+	document.getElementById('confirm').style.display = 'none';
+	document.getElementById('title1').style.display = 'none';
+	document.getElementById('title2').style.display = 'flex';
+	document.getElementById('ver').style.display = 'flex';
+}
 
-console.log("ID ricevuto:", id);
-
-let text = "Console in uso da ";
-document.getElementById("admin").textContent = text + id;
+function no() {
+	const params = new URLSearchParams(window.location.search);
+	const admin = params.get('admin');
+	location.href = 'adminspace.html?admin=' + admin;
+}

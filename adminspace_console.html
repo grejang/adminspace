@@ -32,7 +32,7 @@
         .input-area {
             position: absolute;
             top: 50%;
-            left: 50%;
+            left: 63%;
             transform: translate(-50%, -50%);
             display: flex;
             flex-direction: column;  
@@ -104,12 +104,70 @@
 		.area-img {
 			width: 400px;
 			position: absolute;
-			top: -200px;
+			top: -180px;
 			left: -100px;
 		}
 		
 		#admin {
 			
+		}
+		
+		.yes {
+			font-family: 'VoidFont', monospace;
+            font-size: 30px;
+            padding: 5px 10px;
+            cursor: pointer;
+            background-color: #888888;
+            color: white;
+            margin-top: 5px;
+			position: relative;
+			z-index: 10;
+			left: 40%;
+			bottom: 170px;
+        }
+		.no {
+			font-family: 'VoidFont', monospace;
+            font-size: 30px;
+            padding: 5px 10px;
+            cursor: pointer;
+            background-color: #888888;
+            color: white;
+            margin-top: 5px;
+			position: relative;
+			z-index: 10;
+			left: -11%;
+			bottom: 110px;
+        }
+		#title1 {
+			position: relative;
+			z-index: 10;
+			bottom: 190px;
+			right: 90px;
+			color: black;
+		}
+		#title2 {
+			z-index: 2;
+			position: relative;
+			z-index: 10;
+			bottom: 190px;
+			right: 90px;
+			color: black;
+		}
+		#ver {
+			z-index: 2;
+			position: relative;
+			z-index: 10;
+			bottom: 225px;
+			right: -230px;
+			color: black;
+		}
+		#proceed {
+			z-index: 2;
+			position: relative;
+			z-index: 10;
+			bottom: 160px;
+			right: -65px;
+			color: black;
 		}
     </style>
 
@@ -130,15 +188,27 @@
 
 <a class="adminlink" href="adminspace.html">Torna alla Home</a>
 <div class="container">
-	<p id="admin"></p>
-    <img class="area-img" src="images/console/adminspacegui.png" alt="ConsoleGUI">
-    <div class="input-area">
-       <!-- src="images/console/adminspaceconsole.png" class="center-img" alt="AdminspaceTerminal"-->
-       <input type="text" id="userInput" class="text-box" placeholder="e ADMINSPACE Command">
-       <button class="send-btn" onclick="sendText()">Execute</button>
-       <p>Output dei comandi:</p>
-       <div class="log-area" id="logArea"></div>
-    </div>
+	<div class="title">
+		<p id="title1">adminspace</p>
+		<p id="title2">Adminspace Console</p>
+		<p id="ver">v2.0.84</p>
+	</div>
+	<div id="main">
+		<img class="area-img" src="images/console/adminspacegui.png" alt="ConsoleGUI">
+		<div class="input-area">
+		<!-- src="images/console/adminspaceconsole.png" class="center-img" alt="AdminspaceTerminal"-->
+		<input type="text" id="userInput" class="text-box" placeholder="e ADMINSPACE Command">
+		<button class="send-btn" onclick="sendText()">Execute</button>
+		<p>Output dei comandi:</p>
+		<div class="log-area" id="logArea"></div>
+		</div>
+	</div>
+	<div id="confirm">
+		<p id="proceed">Proceed?</p>
+		<button class="yes" onclick="yes()">Yes</button>
+		<button class="no" onclick="no()">No</button>
+		<img class="area-img" src="images/console/gui.png" alt="ConsoleGUI">
+	</div>
 </div>
 
 
