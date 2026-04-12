@@ -14,7 +14,7 @@ fetch('admins.json')
     // Abilita il pulsante solo dopo che i codici sono caricati
     document.getElementById('btn-login').disabled = false;
 
-    window.login = function () {
+   function login () {
       const risposta  = document.getElementById('input').value.trim();
       const risultato = document.getElementById('result');
 
