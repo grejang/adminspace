@@ -14,6 +14,7 @@ fetch('admins.json')
     // Abilita il pulsante solo dopo che i codici sono caricati
     document.getElementById('btn-login').disabled = false;
 
+	risultato.innerHTML = `<p style="color:#ff0802">[AdminSPACE] admins.json loaded</p>`;
    function login () {
       const risposta  = document.getElementById('input').value.trim();
       const risultato = document.getElementById('result');
@@ -43,9 +44,9 @@ fetch('admins.json')
         risultato.innerHTML = `<p style="color:#ff0802">[AdminSPACE] AdminCode sbagliato o non esistente</p>`;
       }
     };
-
   })
   .catch(() => {
+	  
 
 const codici = {
   '2674598713': 'u2447',  
