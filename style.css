@@ -167,3 +167,16 @@ a:hover {
 a:active {
   color: #ff4700;
 }
+
+.red {
+	color: #ff0626;
+}
+.green {
+	color: #07ff06;
+}
+.blue {
+	color: #0622ff;
+}
+.orange {
+	color: #ff9206;
+}

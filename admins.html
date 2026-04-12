@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdminSPACE - Admins</title>
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="1cf43030-5306-452c-92d3-85a630458f95"></script>
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="icon" href="favicon.ico">
+    <style>
+      body {
+        background-image: url("backgrounds/adminspace.png"); 
+        background-size: cover;
+        background-position: center; 
+        background-attachment: fixed; 
+        color: white;
+        font-family: "VoidFont", monospace;
+      }
+      .text {
+        background: rgba(20,20,20,0.8);
+        border: 2px solid #d60000;
+        border-radius: 6px;
+        padding: 5px 10px;
+        width: 700px;
+        margin-bottom: 10px;
+      }
+	  
+	  #logo {
+		width: 670px;
+	  }
+	  
+	  .adminlink {
+		position: relative;
+		display: inline-block;
+	}
+
+	.adminlink::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: rgba(124, 0, 255, 0.4);
+		opacity: 0;
+		transition: opacity 0.2s;
+	}
+
+	.adminlink:hover::after {
+		opacity: 1;
+	}
+	
+	.red {
+		color: #ff0626;
+	}
+	.green {
+		color: #07ff06;
+	}
+	.blue {
+		color: #0622ff;
+	}
+	.orange {
+		color: #ff9206;
+	}
+	
+	.admin-section {
+		background: rgba(20,20,20,0.8);
+        border: 2px solid #d60000;
+        border-radius: 6px;
+        padding: 5px 10px;
+        width: 670px;
+        margin-bottom: 10px;
+		height: 70px;
+	}
+	
+	.icon {
+		width: 64px;
+	}
+	
+	.admin-id {
+		position: relative;
+		left: 80px;
+		bottom: 64px;
+	}
+	
+	.edit {
+		background: #5e00d6;
+		color: #fff;
+		border: none;
+		border-radius: 2px;
+		font-family: 'VoidFont', monospace;
+		font-size: 14px;
+		cursor: pointer;
+		transition: background 0.2s;
+		position: relative;
+		bottom: 90px;
+		left: 85%;
+		width: 100px;
+		height: 34px;
+	}
+
+	.edit:hover {
+		background: #954bf3;
+	}
+	
+	#edit-section {
+		background: rgba(20, 20, 20, 10);
+		border: 2px solid #d60000;
+		border-radius: 6px;
+		padding: 5px 10px;
+		width: 670px;
+		margin-bottom: 10px;
+		height: 400px;
+		position: absolute;
+		bottom: 10%;
+		display: none;
+	}
+	
+	#cancel {
+		background: #d60000;
+		color: #fff;
+		border: none;
+		border-radius: 2px;
+		font-family: 'VoidFont', monospace;
+		font-size: 14px;
+		cursor: pointer;
+		transition: background 0.2s;
+		position: relative;
+		top: 100px;
+		left: -26%;
+		width: 100px;
+		height: 34px;
+	}
+
+	#cancel:hover {
+		background: #c93c3c;
+	}
+	#cancel.active {
+		top: 60px;
+	}
+	
+	#save {
+		background: #00d608;
+		color: #fff;
+		border: none;
+		border-radius: 2px;
+		font-family: 'VoidFont', monospace;
+		font-size: 14px;
+		cursor: pointer;
+		transition: background 0.2s;
+		position: relative;
+		top: 100px;
+		left: -30%;
+		width: 100px;
+		height: 34px;
+	}
+	
+	#save.active {
+		top: 60px;
+	}
+
+	#save:hover {
+		background: #53d958;
+	}
+	
+	.text-box {
+		background: rgba(0, 0, 0, 0.75);
+		border: 1px solid #d60000f;
+		color: #fff;
+		padding: 6px 16px;
+		border-radius: 6px;
+		font-family: 'VoidFont', monospace;
+		font-size: 14px;
+		height: 32px;
+	}
+	
+	#un-info {
+		display: none;
+	}
+	
+	#un-info.active {
+		display: inline;
+	}
+	#un-info-btn {
+		cursor: pointer;
+		width: 32px;
+		image-rendering: pixelated;
+		display: flex;
+		position: absolute;
+		left: 39%;
+		bottom: 68%;
+	}
+	#nick-info-btn {
+		cursor: pointer;
+		width: 32px;
+		image-rendering: pixelated;
+		display: flex;
+		position: absolute;
+		left: 39%;
+		bottom: 43%;
+	}
+	#nick-info {
+		display: none;
+	}
+	
+	#nick-info.active {
+		display: inline;
+	}
+	#background {
+		padding: 12px;
+		border-radius: 4px;
+		border: 2px solid #1c1c1c;
+		font-size: 14px;
+		color: #000000;
+		font-family: 'VoidFont';
+		background: rgba(255, 255, 255, 0.75);
+	}
+	#nick-info-btn.active {
+		bottom: 35%;
+	}
+      
+    </style>
+  </head>
+  <body>
+  
+  <div class="text">
+  
+	<script>
+		const isMobile = window.innerWidth <= 768; //768
+		document.head.insertAdjacentHTML('beforeend', `<style> ${isMobile ? ` 
+			.text { width: 330px; } 
+			#logo { width: 320px; } 
+			.admin-section {width: 310px; } 
+			.edit {bottom: 80px; left: 70%;} 
+			#edit-section { width: 310px; height: 500px;} 
+			#un-info-btn {left: 80%; bottom: 75%;}
+			#un-info {font-size: 14px;}
+			#nick-info-btn {left: 80%}
+			#save.active {top: 20px;}
+			#save {left: 0px;}
+			#cancel {left: 0px;}
+			#cancel.active {top: 20px}
+			` : `.text {  } `}</style>`);
+	</script>
+    
+    <audio id="music" src="soundtracks/event00071.ogg" autoplay loop></audio>
+     
+    <img id="logo" src="images/adminspacelogo.png" alt="Adminspace Logo Full">
+	
+	<a class="adminlink" href="adminspace.html">Torna alla Home</a>
+	
+	<h1>AdminSPACE - Admins</h1>
+	
+	<p>Qua sotto ci sono i profili di tutti gli Admins registrati a AdminSPACE, clicca sul tuo profilo per modificarlo</p>
+	
+	<p id="stato"></p>
+	
+	<div class="admin-section">
+		<img class="icon" src="admins/u2447.png" alt="Icon">
+		<p class="admin-id">U+2447 | Makeradam</p>
+		<button class="edit" id="u2447" onclick="edit()">Modifica</button>
+	</div>
+	
+	<div class="admin-section">
+		<img class="icon" src="admins/u2660.png" alt="Icon">
+		<p class="admin-id">U+2660 | WillTGC</p>
+		<button class="edit" id="u2660" onclick="edit()">Modifica</button>
+	</div>
+	
+	<div class="admin-section">
+		<img class="icon" src="admins/u2726.png" alt="Icon">
+		<p class="admin-id">U+2726 | </p>
+		<button class="edit" id="u2726" onclick="edit()">Modifica</button>
+	</div>
+	
+	
+	
+	<div id="edit-section">
+		<h2 class="admin-title">Modifica admin:</h2>
+		<p>Cambia Unicode</p><p class="info">L'Unicode è il simbolo dell'admin</p>
+		<img id="un-info-btn" src="images/info.png" alt="Info">
+		<p id="un-info">Per trovarne uno visitate <a class="link" href="https://en.wikipedia.org/wiki/List_of_Unicode_characters">questa pagina</a> di wikipedia (consiglio, cercate nella sezione "Miscellaneous Symbols" o "Miscellaneous Tecnical", le emoji sono valide</p>
+		<input type="text" class="text-box" id="unicode" placeholder="Nuovo Unicode" />
+		<select id="background">
+			<option value="white">Sfondo: Bianco</option>
+			<option value="black">Sfondo: Nero</option>
+		</select>
+		<p>Cambia Nickname</p>
+		<img id="nick-info-btn" src="images/info.png" alt="Info">
+		<p id="nick-info">Il nickname è il nome mostrato dopo il "|" in questa pagina (Facoltativo)</p>
+		<input type="text" class="text-box" id="nickname" placeholder="Nuovo Nickname" />
+		<button id="save" onclick="save(event)">Salva</button>
+		<button id="cancel" onclick="cancel()">Annulla</button>
+	</div>
+
+    <p>- Il team di Grejang</p>
+    
+    <p> - Adam</p>
+	
+	</div>
+	
+	<script src="scripts/admins.js"></script>
+	
+  </div>
+	
+	<!-- BASI DI ADMINSPACE -->
+	<div id="overlay">
+		<div id="logintext">
+			<p>Per accedere a questa pagina è necessario un AdminCode</p>
+			<button class="btn" onclick="redirect()">Accedi</button>
+		</div>
+	</div>
+	<div id="admin-desc">
+		<p id="admin-name">Accesso eseguito da: </p>
+		<button onclick="apriLibreria()" class="library"><img src="images/book.png" class="mini-book">Libreria</button>
+		<button class="logout" onclick="location.href='index.html'">Logout</button>
+	</div>
+	<div class="admin">
+		<img id="frame" src="images/admin_frame.png" alt="Admin Logo Frame">
+		<img id="admin-icon" src="admins/blank.png" alt="Admin Logo">
+	</div>
+	
+	<script src="scripts/main.js"></script>
+<!-- FINE DELLE BASI DI ADMINSPACE-->
+  </body>
+</html>
