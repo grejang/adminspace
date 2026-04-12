@@ -60,6 +60,19 @@
 	.orange {
 		color: #ff9206;
 	}
+	#notification {
+		display: none;
+		background: rgba(20,20,20,0.8);
+        border: 2px solid #d60000;
+        border-radius: 6px;
+        padding: 5px 10px;
+        width: 680px;
+        margin-bottom: 10px;
+	}
+	.copy-text {
+		cursor: pointer;
+		color: #d60000;
+	}
       
     </style>
   </head>
@@ -69,12 +82,16 @@
   
 	<script>
 		const isMobile = window.innerWidth <= 768;
-		document.head.insertAdjacentHTML('beforeend', `<style> ${isMobile ? ` .text { width: 330px; } #logo { width: 320px; } ` : `.text {  } `}</style>`);
+		document.head.insertAdjacentHTML('beforeend', `<style> ${isMobile ? ` .text { width: 330px; } .notification { width: 310px; } #logo { width: 320px; } ` : `.text {  } `}</style>`);
 	</script>
     
     <audio id="music" src="soundtracks/saw_13_returns.ogg" autoplay loop></audio>
      
     <img id="logo" src="images/adminspacelogo.png" alt="Adminspace Logo Full">
+	
+	<div id="notification">
+		<p>Il Profilo per U+0000 è stato creato, condividi questo <i class="copy-text" onClick="copyText(this)">LINK</i> con chi vuoi assegnare l'AdminCode</p>
+	</div>
 	
 	<h1>AdminSPACE</h1>
 	
@@ -89,6 +106,8 @@
 	<a class="adminlink" href="adminspace_console.html">
 		<img src="images/console/adminspaceconsolelogo.png" class="center-img" alt="AdminSPACE Console" width=64px>
 	</a>
+	<p>---Pagine Web---</p>
+	<p>Admins Management: <a class="adminlink" href="admins.html">admins.html</a></p>
 	
 	<div id="model-container"></div>
 
@@ -122,6 +141,20 @@
 	</div>
 	
 	<script src="scripts/main.js"></script>
+	
+	<script>
+	function copyText(elemento) {
+		const testo = "https://grejang.github.io/adminspace/admincode.html"; //pagina assegna Admincode
+
+		navigator.clipboard.writeText(testo);
+		elemento.style.color = "#5e00d6";
+		elemento.innerText = "LINK COPIATO!";
+	}
+	
+	if (admin === "u0000") { //Admin che riceve la notificazione
+		document.getElementById('notification').style.display = 'flex';
+	}
+	</script>
 <!-- FINE DELLE BASI DI ADMINSPACE-->
   </body>
 </html>

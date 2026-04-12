@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdminSPACE - Invita</title>
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="1cf43030-5306-452c-92d3-85a630458f95"></script>
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="icon" href="favicon.ico">
+    <style>
+      body {
+        background-image: url("backgrounds/adminspace.png"); 
+        background-size: cover;
+        background-position: center; 
+        background-attachment: fixed; 
+        color: white;
+        font-family: "VoidFont", monospace;
+      }
+      .text {
+        background: rgba(20,20,20,0.8);
+        border: 2px solid #d60000;
+        border-radius: 6px;
+        padding: 5px 10px;
+        width: 700px;
+        margin-bottom: 10px;
+      }
+	  
+	  #logo {
+		width: 670px;
+	  }
+	  
+	  .adminlink {
+		position: relative;
+		display: inline-block;
+	}
+
+	.adminlink::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: rgba(124, 0, 255, 0.4);
+		opacity: 0;
+		transition: opacity 0.2s;
+	}
+
+	.adminlink:hover::after {
+		opacity: 1;
+	}
+	
+	#create {
+		background: #00d608;
+		color: #fff;
+		border: none;
+		border-radius: 2px;
+		font-family: 'VoidFont', monospace;
+		font-size: 14px;
+		cursor: pointer;
+		transition: background 0.2s;
+		position: relative;
+		width: 100px;
+		height: 34px;
+	}
+	
+	.text-box {
+		background: rgba(0, 0, 0, 0.75);
+		border: 1px solid #d60000f;
+		color: #fff;
+		padding: 6px 16px;
+		border-radius: 6px;
+		font-family: 'VoidFont', monospace;
+		font-size: 14px;
+		height: 32px;
+	}
+	
+	#create.active {
+		top: 60px;
+	}
+
+	#create:hover {
+		background: #53d958;
+	}
+	
+	#background {
+		padding: 12px;
+		border-radius: 4px;
+		border: 2px solid #1c1c1c;
+		font-size: 14px;
+		color: #000000;
+		font-family: 'VoidFont';
+		background: rgba(255, 255, 255, 0.75);
+	}
+      
+    </style>
+  </head>
+  <body>
+  
+  <div class="text">
+  
+	<script>
+		const isMobile = window.innerWidth <= 768;
+		document.head.insertAdjacentHTML('beforeend', `<style> ${isMobile ? ` .text { width: 330px; } #logo { width: 320px; } ` : `.text {  } `}</style>`);
+	</script>
+	
+	<a class="adminlink" href="admins.html">Torna alla pagina: Admins</a>
+    
+    <audio id="music" src="soundtracks/saw_13_returns.ogg" autoplay loop></audio>
+     
+    <img id="logo" src="images/adminspacelogo.png" alt="Adminspace Logo Full">
+	
+	<h1>AdminSPACE - Invita</h1>
+	
+	<p>Per invitare un Amico/a a AdminSPACE compila i seguenti campi e il nostro Server creerà un profilo per loro</p>
+	
+	<h2>1 - Unicode</h2>
+	<p>Visita <a class="link" href="https://en.wikipedia.org/wiki/List_of_Unicode_characters">questa pagina</a> di Wikipedia e cerca un Unicode per loro</p>
+	<input type="text" class="text-box" id="unicode" placeholder="Unicode" />
+	<p>Scegliete un colore di sfondo per l'immagine del AdminCode</p>
+	<select id="background">
+			<option value="white">Sfondo: Bianco</option>
+			<option value="black">Sfondo: Nero</option>
+	</select>
+	<p>Questo è tutto quello che ci serve, clicca il link sotto per finire (ritorna domani alla pagina <a class="adminlink" href="adminspace.html">Home</a> e invia il link a chi vuoi dare l'Admincode</p>
+	<button id="create" onclick="create(event)">Crea</button>
+	
+	<p id="stato"></p>
+	
+    <p>- Il team di Grejang</p>
+    
+    <p> - Adam</p>
+	
+  </div>
+  
+  <script src="scripts/invite.js"></script>
+	
+	<!-- BASI DI ADMINSPACE -->
+	<div id="overlay">
+		<div id="logintext">
+			<p>Per accedere a questa pagina è necessario un AdminCode</p>
+			<button class="btn" onclick="redirect()">Accedi</button>
+		</div>
+	</div>
+	<div id="admin-desc">
+		<p id="admin-name">Accesso eseguito da: </p>
+		<button class="logout" onclick="location.href='index.html'">Logout</button>
+	</div>
+	<div class="admin">
+		<img id="frame" src="images/admin_frame.png" alt="Admin Logo Frame">
+		<img id="admin-icon" src="admins/blank.png" alt="Admin Logo">
+	</div>
+	
+	<script src="scripts/main.js"></script>
+<!-- FINE DELLE BASI DI ADMINSPACE-->
+  </body>
+</html>
