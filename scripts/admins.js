@@ -59,6 +59,8 @@ async function save(e) {
   const background = document.getElementById("background").value;
   const nickname = document.getElementById("nickname").value;
 
+  if (unicode === "" && nickname === "") return
+
   stato.textContent = "❏ Elaborazione...";
   stato.style.color= "#ff9206";
 
